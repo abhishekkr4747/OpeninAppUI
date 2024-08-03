@@ -1,7 +1,7 @@
 # OpeninApp UI
 OpeninApp UI with Jetpack Compose. 📱✨
 
-## ScreenShots
+## Screenshots
 
 <p align="center">
 
