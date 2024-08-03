@@ -6,19 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.openinapp.model.LinkResponse
 import com.example.openinapp.network.ApiService
+import com.example.openinapp.presentation.utils.Constants
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
     var linkApiResponseState = mutableStateOf<LinkResponse?>(null)
 
-
-    val BASE_URL = "https://api.inopenapp.com/"
-    val token = "Bearer " +
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCkW0ox8tbjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI"
     val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(Constants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
@@ -27,7 +24,7 @@ class MainViewModel: ViewModel() {
     fun getApiData() {
         viewModelScope.launch {
             try {
-                val response = apiService.getData(token)
+                val response = apiService.getData(Constants.token)
 
                 if (response.isSuccessful) {
                     linkApiResponseState.value = response.body()

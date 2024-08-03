@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
             OpeninAppTheme {
                 val systemUiController = rememberSystemUiController()
                 systemUiController.setStatusBarColor(color = Color(0xFF0E6FFF))
-               BottomBarWithFabDem()
+                BottomBarWithFabDem()
             }
         }
 
@@ -49,7 +49,7 @@ fun BottomBarWithFabDem() {
                 BottomNav(navController = navController)
             }
         },
-        contentWindowInsets = WindowInsets(0,0,0,0)
+        contentWindowInsets = WindowInsets(0, 0, 0, 0)
     ) {
         Box(
             modifier = Modifier

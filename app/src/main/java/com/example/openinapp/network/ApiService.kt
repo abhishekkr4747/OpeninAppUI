@@ -8,5 +8,5 @@ import retrofit2.http.Header
 interface ApiService {
 
     @GET("api/v1/dashboardNew")
-    suspend fun getData(@Header("Authorization") authorization: String) : Response<LinkResponse>
+    suspend fun getData(@Header("Authorization") authorization: String): Response<LinkResponse>
 }
